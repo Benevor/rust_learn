@@ -1,14 +1,19 @@
+mod stack_heap;
+
 use std::cmp::Ordering;
 use std::io;
 // prelude
 use rand::Rng; // trait
 
+
+#[allow(dead_code)]
 const MAX_POINT: u32 = 10_0000;
 
 fn main() {
     loop_expr();
 }
 
+#[allow(dead_code)]
 fn guess_num() {
     // 生成一个随机数
     let random_num = rand::thread_rng().gen_range(1..101);  // 生成随机数
@@ -36,6 +41,7 @@ fn guess_num() {
     }
 }
 
+#[allow(dead_code)]
 fn shadow_1() {
     const MIN_POINT: u32 = 1;
     let x = 5;
@@ -43,10 +49,12 @@ fn shadow_1() {
     println!("{}", x);
 
     let y = 1;
+    println!("{}", y);
     let y = "hello";
     println!("{}", y);
 }
 
+#[allow(dead_code)]
 fn tuple_1() {
     let tup1: (i32, f64) = (100, 3.2);  // 长度不可变，类似地，没有mut声明的话，初始化后，tuple内容不可更新
     println!("{},{}", tup1.0, tup1.1);
@@ -54,19 +62,24 @@ fn tuple_1() {
     println!("{},{}", x, y);
 }
 
+#[allow(dead_code)]
 fn array_1() {
     // 数据存放在栈上面，而不是堆上面
     // 数组的长度不可变
     // 访问超过数组下标会报错，不允许越界访问
     let month: [&str; 3] = ["1", "2", "3"];
     let a = [5; 3];
+    println!("{}", month[0]);
+    println!("{}", a[0]);
 }
 
+#[allow(dead_code)]
 fn para_1(x: i32, y: f64) {
     println!("{}", x);
     println!("{}", y);
 }
 
+#[allow(dead_code)]
 fn expr_1() {
     // expression 与 statement，要区分清楚
     let y = {
@@ -76,10 +89,12 @@ fn expr_1() {
     println!("{}", y);
 }
 
+#[allow(dead_code)]
 fn plus_one(x: i32) -> i32 {
     x + 1
 }
 
+#[allow(dead_code)]
 fn func_return_value() -> i32 {
     // rust中，函数返回值就是函数体中最后一个表达式的值
     // 如果要提前返回，则需要使用 return 关键字
@@ -94,14 +109,17 @@ fn func_return_value() -> i32 {
     }
 }
 
+#[allow(dead_code)]
 fn if_expr() {
     let condition = true;
     let number = if condition {
         println!("test");
         5
     } else { 6 }; // if 和 else 的最后的表达式的类型必须相同
+    println!("{}", number);
 }
 
+#[allow(dead_code)]
 fn loop_expr() {
     let mut counter = 0;
     let result = loop {
@@ -114,6 +132,7 @@ fn loop_expr() {
     println!("{}", result);
 }
 
+#[allow(dead_code)]
 fn for_loop_1() {
     let tmp = [1, 2, 3, 4, 5];
     for item in tmp.iter() {
